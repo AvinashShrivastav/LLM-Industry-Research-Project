@@ -1,0 +1,13 @@
+import plotly.graph_objects as go
+import random
+import google.generativeai as genai
+from openai import OpenAI
+from PyPDF2 import PdfReader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain.text_splitter import CharacterTextSplitter
+from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain_community.vectorstores import FAISS
+from langchain.chains.question_answering import load_qa_chain
+from langchain_community.llms import OpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
