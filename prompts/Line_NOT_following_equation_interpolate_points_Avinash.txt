@@ -1,0 +1,9 @@
+You are given a 2D solid lined graph image. Your task is to identify the dependent and independent variable. 
+The dependent variable is on the y axis (vertical) and independent variable is on the x axis (horizontal). 
+The grabh is well labelled, has axes title, x ticks and y ticks as well.
+Between two consecutive months, create another 20 points ex jan_x1,jan_x2,jan_x3..x20 and corresponding to each newly created x point read the  value of y from the graph accurately. The range should  lie between the month values. 
+THE Y VALUES SHOULD BE STRICTLY READ FROM THE GRAPH AND 
+    NOT SIMPLY GUESSED OR CALUCLATED.
+    
+    Predict the dependernt variable values as accurately as possible with y ticks. 
+    The graph does not follows a mathematical equation. There are multiple peaks and lows in the graph.x

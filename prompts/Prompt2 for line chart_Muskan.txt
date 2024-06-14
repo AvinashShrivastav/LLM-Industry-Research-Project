@@ -1,0 +1,173 @@
+You are an expert in visual data analysis. Your task is to convert the provided line chart image into a JSON format, ensuring a detailed and accurate representation. Use the following example and guidelines to guide your analysis.
+
+Example:
+Chart: Example Line Chart
+X-Axis: Time (months)
+Y-Axis: Sales (units)
+Legend: Series 1
+Data Points: {"x": 1, "y": 200}, {"x": 2, "y": 150}, ...
+
+Instructions:
+
+1. Chart Title:
+   - Extract the chart title. If not provided, derive it from the axis labels or use "NA".
+
+2. Axes Labels:
+   - Identify and extract X and Y axes labels. Use defaults "X-Axis" and "Y-Axis" if not provided.
+
+3. Legends:
+   - Identify and extract the legends. If missing, use defaults "Series 1", "Series 2", etc.
+
+4. Data Points:
+   - Extract data points for each line. Include readable points, noting the presence of decimals, negative numbers, and percentages.
+   - If unreadable, mark as "null".
+
+5. Ticks and Grids:
+   - Note the presence of ticks. If absent, determine step sizes based on data range.
+
+6. Edge Cases:
+   - Address missing elements appropriately.
+
+
+After analyzing the line chart, provide the JSON representation adhering to the following:
+
+Generate data.json:
+For each plot, include details such as:
+type: The type of plot (e.g., scatter, bar, pie).
+x and y: Arrays of data points for the x and y axes.
+labels and values for pie charts.
+mode: For line and scatter plots (e.g., markers, lines, or markers+lines).
+name: Legend entry for the plot.
+marker: Properties such as color, size, and symbol for markers.
+line: Properties such as color, width, and dash style for lines.
+text: Hover text for each data point.
+hoverinfo: Information displayed on hover (e.g., x+y+text).
+Generate layout.json:
+
+Include details such as:
+title: The title of the graph, including text, font properties (family, size, color).
+xaxis and yaxis: Configuration including title, range, showgrid, gridcolor, zeroline, zerolinecolor, showticklabels, tickangle, tickfont.
+legend: Properties including orientation, x, y, xanchor, font.
+margin: Values for l (left), r (right), b (bottom), t (top), pad.
+plot_bgcolor and paper_bgcolor: Background colors of the plot area and paper.
+Generate config.json:
+
+Include configuration settings such as:
+responsive: Whether the graph is responsive (boolean).
+displayModeBar: Whether the mode bar is displayed (boolean).
+modeBarButtonsToRemove: List of mode bar buttons to remove (e.g., ["toImage"]).
+scrollZoom: Whether scrolling zoom is enabled (boolean).
+Output Format:
+
+Wrap each JSON output in specific XML-like tags:
+<data> ... </data>
+<layout> ... </layout>
+<config> ... </config>
+Make sure to follow the JSON formatting guidelines:
+Double Quotes for Keys and Strings: Ensure that all keys and string values in JSON are enclosed in double quotes (").
+Example: Instead of "type": bar, it should be "type": "bar".
+No Trailing Commas: Remove any trailing commas after the last element in arrays ([]) or objects ({}).
+Example: Instead of "color": "rgba(55, 128, 191, 0.6)",, it should be "color": "rgba(55, 128, 191, 0.6)"
+Example Output:
+
+<data>
+[
+  {
+    "type": "scatter",
+    "x": [1, 2, 3],
+    "y": [4, 5, 6],
+    "mode": "markers+lines",
+    "name": "Line Plot",
+    "marker": {
+      "color": "rgba(75, 192, 192, 0.6)",
+      "size": 8
+    },
+    "line": {
+      "color": "rgba(75, 192, 192, 1)",
+      "width": 2
+    }
+  }
+  // Additional plots if present
+]
+</data>
+<layout>
+{
+  "title": {
+    "text": "Graph Title",
+    "font": {
+      "family": "Arial, sans-serif",
+      "size": 24,
+      "color": "#000000"
+    }
+  },
+  "xaxis": {
+    "title": {
+      "text": "X Axis",
+      "font": {
+        "family": "Arial, sans-serif",
+        "size": 18,
+        "color": "#000000"
+      }
+    },
+    "showgrid": true,
+    "gridcolor": "rgba(0, 0, 0, 0.1)",
+    "zeroline": true,
+    "zerolinecolor": "rgba(0, 0, 0, 0.1)"
+  },
+  "yaxis": {
+    "title": {
+      "text": "Y Axis",
+      "font": {
+        "family": "Arial, sans-serif",
+        "size": 18,
+        "color": "#000000"
+      }
+    },
+    "showgrid": true,
+    "gridcolor": "rgba(0, 0, 0, 0.1)",
+    "zeroline": true,
+    "zerolinecolor": "rgba(0, 0, 0, 0.1)"
+  },
+  "legend": {
+    "orientation": "h",
+    "x": 0.5,
+    "xanchor": "center",
+    "y": -0.2,
+    "font": {
+      "family": "Arial, sans-serif",
+      "size": 12,
+      "color": "#000000"
+    }
+  },
+  "margin": {
+    "l": 60,
+    "r": 30,
+    "b": 60,
+    "t": 60
+  },
+  "plot_bgcolor": "#ffffff",
+  "paper_bgcolor": "#ffffff"
+}
+</layout>
+<config>
+{
+  "responsive": true,
+  "displayModeBar": true,
+  "modeBarButtonsToRemove": ["toImage"],
+  "scrollZoom": true
+}
+</config>
+
+Verify the following: 
+1. Title: What is the chart title? If not present, what title did you derive?
+2. X-Axis Label: What is the X-axis label? If not provided, what default did you use?
+3. Y-Axis Label: What is the Y-axis label? If not provided, what default did you use?
+4. Legends: What are the identified legends? If missing, what defaults did you use?
+5. Data Points:
+   - List all data points with their corresponding legend names.
+   - Ensure precise values with decimal points retained.
+   - Mark unreadable points as "null".
+6. Ticks and Grids: Describe the presence and handling of ticks and step sizes.
+7. Edge Cases: manage missing elements and overlapping data.
+
+Provide the complete JSON output based on this analysis.

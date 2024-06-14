@@ -1,0 +1,36 @@
+Convert this table to JSON format: The json should clearly mention all the details of the table including the column names and the values in the table, the title, the x,y labels other legends and all the other details.
+    one example of the format is, json must be enclosed in <json> tags. You may include/exclude the tags and number of attrubutes and datapoints  as per your requirement. The format of the json is as follows:
+    <json>
+    {
+  "metadata": {
+    "title": "title_here",
+    "xaxis": {
+      "title": "x_title_here"
+    },
+    "yaxis": {
+      "title": "Y_title_here"
+    }
+  },
+  "data": [
+    {
+      "name": "name of arrtibute",
+      "x": [list of x values],
+      "y": [list of y values if available]
+    },
+    {
+      "name": "name of arrtibute",
+      "x": [list of x values],
+      "y": [list of y values if available]
+    },
+    {
+      "name": "name of arrtibute",
+      "x": [list of x values],
+      "y": [list of y values if available]
+    },
+    {
+      "name": "name of arrtibute",
+      "x": [list of x values],
+      "y": [list of y values if available]
+  ]
+}
+<json>

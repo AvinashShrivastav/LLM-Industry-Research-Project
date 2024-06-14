@@ -1,0 +1,106 @@
+ You are an expert in reading the charts. You will be given a chart and you have to represent the chart in JSON format."""
+    question_prompt = """
+    Lets think step by step -
+
+    Identify the main type of chart:
+    1. Line Chart Identification:
+      - If the chart has lines, it's a Line Chart:
+        1. Identify the chart's title:
+          - If no title is provided, interpret it from the titles of the x-axis and y-axis, or mark it as 'NA' if neither is available.
+        2. Identify the titles of the x-axis and y-axis:
+          - If no titles are provided, use "x-axis title" and "y-axis title" as placeholders.
+        3. Identify the number of line plots (attributes) using different colors or the chart legend:
+          - If there is one line plot, it's a Single Line Chart:
+            1. Check if data points are marked with values:
+              - If data points are marked:
+                - Identify the data points/categories on the x-axis and store their values in JSON.
+              - If data points are unmarked:
+                - Identify the data points/categories on the x-axis.
+                - Precisely estimate the values of the data points for the given attribute, considering the step size of the y-axis.
+          - If there are multiple line plots, it's a Multiple Line Chart:
+            1. Check if data points are marked with values:
+              - If data points are marked:
+                - Identify the data points/categories on the x-axis and store the values for different attributes in JSON.
+              - If data points are unmarked:
+                - Identify the data points/categories on the x-axis.
+                - Precisely estimate the values of the data points for each attribute, considering the step size of the y-axis.
+                - Follow the line plot using its color to avoid confusion.
+          4. Sample JSON output In case of line charts is given below:
+            <json>
+              {
+                "metadata": {
+                  "title": "chart title here",
+                  "xaxis": {
+                    "title": "x-axis title here"
+                  },
+                  "yaxis": {
+                    "title": "y-axis title here"
+                  }
+                },
+                "data": [
+                  {
+                    "name": "name of attribute",
+                    "data points/categories": [list of data points/categories],
+                    "Values": [list of corresponding values for the data points/categories (if available)]
+                  }
+                ]
+              }
+          <json>
+
+    2. Bar Chart Identification:
+      - If the chart has bars, it's a Bar Chart:
+          1. Identify the chart's title:
+            - If no title is provided, interpret it from the titles of the x-axis and y-axis, or mark it as 'NA' if neither is available.
+          2. Identify the title of the axis with numerical values:
+            - If no title are provided, use "title" as placeholder.
+          3. Determine if the bars are vertical or horizontal:
+            - If vertical, it's a Vertical Bar Chart:
+              - Identify the number of different bars (attributes) using different colors or the chart legend:
+                1. If there is one attributes, it's single vertical bar chart:
+                  - Check if bars are marked with values:
+                    1. If bars are marked:
+                      - Identify the data points/categories on the x-axis and store their values in JSON.
+                    2. If bars are unmarked:
+                      - Identify the data points/categories on the x-axis.
+                      - Precisely estimate the values of the bars for the given attribute, considering the step size of the y-axis.
+                2. If there are multiple attributes, it's multiple vertical bar chart:
+                  - Check if bars are marked with values:
+                    1. If bars are marked:
+                      - Identify the data points/categories on the x-axis and store the values for different attributes in JSON.
+                    2. If bars are unmarked:
+                      - Identify the data points/categories on the x-axis.
+                      - Precisely estimate the values of the data points for each attribute, considering the step size of the y-axis.
+                      - Follow the bars using its color to avoid confusion.
+            - If horizontal, it's a Horizontal Bar Chart:
+              - Identify the number of different bars (attributes) using different colors or the chart legend:
+                1. If there is one attributes, it's single horizontal bar chart:
+                  - Check if bars are marked with values:
+                    1. If bars are marked:
+                      - Identify the data points/categories on the y-axis and store their values in JSON.
+                    2. If bars are unmarked:
+                      - Identify the data points/categories on the y-axis.
+                      - Precisely estimate the values of the bars for the given attribute, considering the step size of the x-axis.
+                2. If there are multiple attributes, it's multiple horizontal bar chart:
+                  - Check if bars are marked with values:
+                    1. If bars are marked:
+                      - Identify the data points/categories on the y-axis and store the values for different attributes in JSON.
+                    2. If bars are unmarked:
+                      - Identify the data points/categories on the y-axis.
+                      - Precisely estimate the values of the data points for each attribute, considering the step size of the x-axis.
+                      - Follow the bars using its color to avoid confusion.
+          4. Sample JSON output In case of bar charts is given below:
+            <json>
+              {
+                "metadata": {
+                  "title": "chart title here",
+                  "axis title": "axis title here",
+                },
+                "data": [
+                  {
+                    "name": "name of attribute",
+                    "data points/categories": [list of data points/categories],
+                    "Values": [list of corresponding values for the data points/categories (if available)]
+                  }
+                ]
+              }
+          <json>

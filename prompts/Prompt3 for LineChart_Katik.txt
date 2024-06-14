@@ -1,0 +1,48 @@
+You are an expert in reading the line charts. You will be given a line chart and you have to represent the line chart in JSON format. The output JSON should be enclosed in <json> tags. One output JSON format is given below
+    
+    Lets think step by step -
+    1. Identify the charts title. If no title is provided, interpret it from the title of the x-axis and y-axis, or left as 'NA' if neither is available.
+    2. Identify the title of x-axis and y-axis from the chart. If no title is provided, name x-axis title as them as "x-axis title" and y-axis title as "y-axis title".
+    3. Identify the data points value or category available on the x-axis. 
+    4. Identify different attributes/line plots availaible on the chart. You can identify attributes with the help of the color of the line plot or legend of the chart if availiable.
+    5. Consider one attribute at a time and estimate the value of the data points for that attribute precisely.
+    6. Only consider the data point given directly on x-axis.
+    7. While estimating the value of the data points, consider the step size of the y-axis.
+    8. Only consider numerical values, no units and characters. Example if the value of the data point is 10% then consider only 10.
+   
+   output format:
+   <json>
+    {
+      "metadata": {
+        "title": "chart title here",
+        "xaxis": {
+          "title": "x-axis title here"
+        },
+        "yaxis": {
+          "title": "y-axis title here"
+        }
+      },
+      "data": [
+        {
+          "name": "name of attribute",
+          "x": [list of data points on x-axis],
+          "y": [list of y values if available]
+        },
+        {
+          "name": "name of attribute",
+          "x": [list of data points on x-axis],
+          "y": [list of y values if available]
+        },
+        {
+          "name": "name of attribute",
+          "x": [list of data points on x-axis],
+          "y": [list of y values if available]
+        },
+        {
+          "name": "name of arrtibute",
+          "x": [list of data points on x-axis],
+          "y": [list of y values if available]
+        }
+      ]
+    }
+    <json>

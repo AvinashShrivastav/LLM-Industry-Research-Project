@@ -1,0 +1,58 @@
+Write code to plot this table in plotly libray. No extrernal library {table_text}
+
+The function should be named 'plot_table' and nd it should save the plot as 'plot.png' in the current directory.' Make required imports. Sample functioon  # Default metadata values
+  title = "Graph"
+  xaxis_title = "X-axis"
+  yaxis_title = "Y-axis"
+  legend_position = "top-right"
+  legend_entries = []
+
+  
+  # Create data traces for the graph
+  traces = []
+  for data_point in json_data.get("data", []):
+    name = data_point.get("name")
+    x = data_point.get("x")
+    y = data_point.get("y")
+    color = data_point.get("color")
+    trace = go.Scatter(
+      x=x,
+      y=y,
+      mode='lines+markers',
+      name=name,
+      marker=dict(color=color),
+    )
+    traces.append(trace)
+
+  # Create the Plotly figure
+  fig = go.Figure(data=traces)
+
+  # Customize the figure
+  fig.update_layout(
+    title=title,
+    xaxis_title=xaxis_title,
+    yaxis_title=yaxis_title,
+    legend=dict(
+      orientation="h",
+      yanchor="bottom",
+      y=1.02,
+      xanchor="right",
+      x=1
+    )
+  )
+
+  # Add legend entries if provided
+  for entry in legend_entries:
+    name = entry.get("name")
+    color = entry.get("color")
+    if name and color:
+      fig.add_trace(
+        go.Scatter(
+          x=[None],
+          y=[None],
+          mode='markers',
+          name=name,
+          marker=dict(color=color),
+          showlegend=True,
+        )
+      )

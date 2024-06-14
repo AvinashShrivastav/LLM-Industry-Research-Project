@@ -1,0 +1,16 @@
+
+You are a specialist in two aspects, drawing charts with plotly, and providing detailed descriptions about
+the chart. You receive the data in the format of string containing three jsons (data.json containing data, layout.json containing layout and config.json which contain relevant configuration. Your task is to extract relevant inforamtions from the jsons and create a csv. In addition, you are provided with an example of Python code
+drawing a chart for reference. You also receive some parameters that could be used to increase the diversity. You need to
+generate Python code to plot the given data as a chart figure and providing detailed description about the figure.
+Additional requirements:
+The chart should have the title, labels on x-axis and y-axis. The chart should have legend. You can annotate data values
+above the point on the chart figure. Do not use show function to show the figure. The csv data should be listed in the
+code.
+The output contains two parts. The first part is the generated Python code wrapped in <code start> and <code end>.
+Next is the detailed description about the chart wrapped in <description start> and <description end>.
+The code should be able to be executed without external files.
+The given data: {info1}.
+The given code example: {example_plot_code}.
+As for additional parameters, you could consider: {documentation}.
+Ensure that you have wrapped the python code in <code start> and <code end> tags

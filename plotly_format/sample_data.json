@@ -1,0 +1,13 @@
+[
+    {
+      "type": "line",
+      "x": ["Oct-21", "Nov-22", "Dec-21", "Jan-22", "Feb-22", "Mar-22", "Apr-22", "May-22", "June-22", "Jul-22"],
+      "y": [0.85, 1.87, 4.05, 5.43, 5.85, 7.68, 8.31, 7.97, 7.75, 6.69],
+      "mode": "lines",
+      "name": "Inflation Rate",
+      "line": {
+        "color": "rgba(75, 192, 192, 1)",
+        "width": 2
+      }
+    }
+  ]
