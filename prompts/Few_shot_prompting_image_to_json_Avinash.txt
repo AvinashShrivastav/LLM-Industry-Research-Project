@@ -7,6 +7,8 @@ Graph Analysis:
 Identify and categorize the plot types present in the graph (e.g., line, scatter, bar, pie).
 Extract the data points for each plot (x-values, y-values, and any other relevant data such as labels for pie charts).
 Note any multiple plots on the same figure and their configurations.
+
+
 Generate data.json:
 
 For each plot, include details such as:

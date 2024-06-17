@@ -273,3 +273,141 @@ Example Output:
 }
 </config>
 ",16.746163606643677,0.0,0.0,0.0,6.81906270980835,0.0,Gemini Vision Pro,ChatGPT 3.5 ang Gemini
+2024-06-14 15:25:01,with_label.jpg,""" ```\n{\n  \""data\"": [\n    {\n      \""x\"": [\""Oct-21\"", \""Nov-22\"", \""Dec-21\"", \""Jan-22\"", \""Feb-22\"", \""Mar-22\"", \""Apr-22\"", \""May-22\"", \""June-22\"", \""Jul-22\""],\n      \""y\"": [0.85, 1.87, 4.05, 5.43, 5.85, 7.68, 8.31, 7.97, 7.75, 6.69],\n      \""type\"": \""scatter\"",\n      \""mode\"": \""lines\"",\n      \""name\"": \""Inflation Rate\""\n    }\n  ],\n  \""layout\"": {\n    \""title\"": \""All India year on year inflation Rate\"",\n    \""xaxis\"": {\n      \""title\"": \""Month\""\n    },\n    \""yaxis\"": {\n      \""title\"": \""Inflation Rate\""\n    }\n  }\n}\n```""",""" ```\n{\n  \""data\"": [\n    {\n      \""x\"": [\""Oct-21\"", \""Nov-22\"", \""Dec-21\"", \""Jan-22\"", \""Feb-22\"", \""Mar-22\"", \""Apr-22\"", \""May-22\"", \""June-22\"", \""Jul-22\""],\n      \""y\"": [0.85, 1.87, 4.05, 5.43, 5.85, 7.68, 8.31, 7.97, 7.75, 6.69],\n      \""type\"": \""scatter\"",\n      \""mode\"": \""lines\"",\n      \""name\"": \""Inflation Rate\""\n    }\n  ],\n  \""layout\"": {\n    \""title\"": \""All India year on year inflation Rate\"",\n    \""xaxis\"": {\n      \""title\"": \""Month\""\n    },\n    \""yaxis\"": {\n      \""title\"": \""Inflation Rate\""\n    }\n  }\n}\n```""",""" """,,10.156331539154053,0.0,0.0,0.0,0.0,0.0,Gemini Vision Pro,ChatGPT 3.5 ang Gemini
+2024-06-14 15:27:01,with_label.jpg,"{""metadata"": {""title"": ""Inflation Rate"", ""xaxis"": {""title"": ""Month""}, ""yaxis"": {""title"": ""Inflation Rate""}}, ""data"": [{""name"": ""Inflation Rate"", ""x"": [""Oct-21"", ""Nov-21"", ""Dec-21"", ""Jan-22"", ""Feb-22"", ""Mar-22"", ""Apr-22"", ""May-22"", ""Jun-22"", ""Jul-22""], ""y"": [0.85, 1.87, 4.05, 5.43, 5.85, 7.6, 8.31, 7.97, 7.75, 6.69]}]}","{""metadata"": {""title"": ""Inflation Rate"", ""xaxis"": {""title"": ""Month""}, ""yaxis"": {""title"": ""Inflation Rate""}}, ""data"": [{""name"": ""Inflation Rate"", ""x"": [""Oct-21"", ""Nov-21"", ""Dec-21"", ""Jan-22"", ""Feb-22"", ""Mar-22"", ""Apr-22"", ""May-22"", ""Jun-22"", ""Jul-22""], ""y"": [0.85, 1.87, 4.05, 5.43, 5.85, 7.6, 8.31, 7.97, 7.75, 6.69]}]}","Task: Extract detailed information from a given graph image and generate JSON files (data.json, layout.json, and config.json) compatible with Plotly. Use the specified delimiters to wrap each JSON section.
+
+Instructions:
+
+Graph Analysis:
+
+Identify and categorize the plot types present in the graph (e.g., line, scatter, bar, pie).
+Extract the data points for each plot (x-values, y-values, and any other relevant data such as labels for pie charts).
+Note any multiple plots on the same figure and their configurations.
+Generate data.json:
+
+For each plot, include details such as:
+type: The type of plot (e.g., scatter, bar, pie).
+x and y: Arrays of data points for the x and y axes.
+labels and values for pie charts.
+mode: For line and scatter plots (e.g., markers, lines, or markers+lines).
+name: Legend entry for the plot.
+marker: Properties such as color, size, and symbol for markers.
+line: Properties such as color, width, and dash style for lines.
+text: Hover text for each data point.
+hoverinfo: Information displayed on hover (e.g., x+y+text).
+Generate layout.json:
+
+Include details such as:
+title: The title of the graph, including text, font properties (family, size, color).
+xaxis and yaxis: Configuration including title, range, showgrid, gridcolor, zeroline, zerolinecolor, showticklabels, tickangle, tickfont.
+legend: Properties including orientation, x, y, xanchor, font.
+margin: Values for l (left), r (right), b (bottom), t (top), pad.
+plot_bgcolor and paper_bgcolor: Background colors of the plot area and paper.
+Generate config.json:
+
+Include configuration settings such as:
+responsive: Whether the graph is responsive (boolean).
+displayModeBar: Whether the mode bar is displayed (boolean).
+modeBarButtonsToRemove: List of mode bar buttons to remove (e.g., [""toImage""]).
+scrollZoom: Whether scrolling zoom is enabled (boolean).
+Output Format:
+
+Wrap each JSON output in specific XML-like tags:
+<data> ... </data>
+<layout> ... </layout>
+<config> ... </config>
+Make sure to follow the JSON formatting guidelines:
+Double Quotes for Keys and Strings: Ensure that all keys and string values in JSON are enclosed in double quotes ("").
+Example: Instead of ""type"": bar, it should be ""type"": ""bar"".
+No Trailing Commas: Remove any trailing commas after the last element in arrays ([]) or objects ({}).
+Example: Instead of ""color"": ""rgba(55, 128, 191, 0.6)"",, it should be ""color"": ""rgba(55, 128, 191, 0.6)""
+Example Output:
+
+<data>
+[
+  {
+    ""type"": ""scatter"",
+    ""x"": [1, 2, 3],
+    ""y"": [4, 5, 6],
+    ""mode"": ""markers+lines"",
+    ""name"": ""Line Plot"",
+    ""marker"": {
+      ""color"": ""rgba(75, 192, 192, 0.6)"",
+      ""size"": 8
+    },
+    ""line"": {
+      ""color"": ""rgba(75, 192, 192, 1)"",
+      ""width"": 2
+    }
+  }
+  // Additional plots if present
+]
+</data>
+<layout>
+{
+  ""title"": {
+    ""text"": ""Graph Title"",
+    ""font"": {
+      ""family"": ""Arial, sans-serif"",
+      ""size"": 24,
+      ""color"": ""#000000""
+    }
+  },
+  ""xaxis"": {
+    ""title"": {
+      ""text"": ""X Axis"",
+      ""font"": {
+        ""family"": ""Arial, sans-serif"",
+        ""size"": 18,
+        ""color"": ""#000000""
+      }
+    },
+    ""showgrid"": true,
+    ""gridcolor"": ""rgba(0, 0, 0, 0.1)"",
+    ""zeroline"": true,
+    ""zerolinecolor"": ""rgba(0, 0, 0, 0.1)""
+  },
+  ""yaxis"": {
+    ""title"": {
+      ""text"": ""Y Axis"",
+      ""font"": {
+        ""family"": ""Arial, sans-serif"",
+        ""size"": 18,
+        ""color"": ""#000000""
+      }
+    },
+    ""showgrid"": true,
+    ""gridcolor"": ""rgba(0, 0, 0, 0.1)"",
+    ""zeroline"": true,
+    ""zerolinecolor"": ""rgba(0, 0, 0, 0.1)""
+  },
+  ""legend"": {
+    ""orientation"": ""h"",
+    ""x"": 0.5,
+    ""xanchor"": ""center"",
+    ""y"": -0.2,
+    ""font"": {
+      ""family"": ""Arial, sans-serif"",
+      ""size"": 12,
+      ""color"": ""#000000""
+    }
+  },
+  ""margin"": {
+    ""l"": 60,
+    ""r"": 30,
+    ""b"": 60,
+    ""t"": 60
+  },
+  ""plot_bgcolor"": ""#ffffff"",
+  ""paper_bgcolor"": ""#ffffff""
+}
+</layout>
+<config>
+{
+  ""responsive"": true,
+  ""displayModeBar"": true,
+  ""modeBarButtonsToRemove"": [""toImage""],
+  ""scrollZoom"": true
+}
+</config>
+",13.878888130187988,0.0,5.505644083023071,Gemini Vision Pro,ChatGPT 3.5

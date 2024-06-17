@@ -16,8 +16,7 @@ import config
 
 # Code to get information using Chat-gpt 3.5 Turbo + PDF knowledge
 def gpt_model_with_knowledge(vector_db, user_input, prompt):
-    # docs = vector_db.similarity_search(user_input)
-    return user_input
+    docs = vector_db.similarity_search(user_input)
     docs = ""
 
     llm = llmOpenAI(openai_api_key=config.open_ai_key)
@@ -28,9 +27,8 @@ def gpt_model_with_knowledge(vector_db, user_input, prompt):
 
 # Code to get information using Gemini model + PDF knowledge
 def gemini_model_with_knowledge(vector_db, user_input, prompt):
-    return user_input
 
-    # docs = vector_db.similarity_search(user_input)
+    docs = vector_db.similarity_search(user_input)
     docs = " "
 
     genai.configure(api_key=config.gemini_key)

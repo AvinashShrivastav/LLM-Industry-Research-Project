@@ -1,0 +1,205 @@
+Task: Extract detailed information from a given graph image and generate JSON files (data.json, layout.json, and config.json) compatible with Plotly. Use the specified delimiters to wrap each JSON section.
+
+Instructions:
+
+Graph Analysis:
+
+1. Identify and categorize the plot types present in the graph:
+   - Common 2D plots: `scatter`, `bar`, `pie`, `area` (as `scatter` with `fill`), `line`, `stacked bar`.
+   - Advanced 3D plots: `scatter3d`, `surface`.
+2. Extract the data points for each plot:
+   - For 2D plots: Extract `x-values`, `y-values`, and any other relevant data (e.g., `labels` for pie charts).
+   - For 3D plots: Extract `x-values`, `y-values`, and `z-values`.
+3. Note any multiple plots on the same figure and their configurations (e.g., colors, stack groups, fill areas).
+
+Generate `data.json`:
+
+For each plot, include details such as:
+- **type**: The type of plot (e.g., `scatter`, `bar`, `pie`, `area`, `scatter3d`, `surface`).
+  - For area charts, use `type: "scatter"` with `fill` specified.
+- **x**, **y**, and **z** (if applicable): Arrays of data points for the `x`, `y`, and `z` axes.
+- **labels** and **values** for pie charts.
+- **mode**: For line and scatter plots (e.g., `markers`, `lines`, `markers+lines`).
+- **name**: Legend entry for the plot.
+- **marker**: Properties such as color, size, and symbol for markers.
+- **line**: Properties such as color, width, and dash style for lines.
+- **text**: Hover text for each data point.
+- **hoverinfo**: Information displayed on hover (e.g., `x+y+text`).
+- **fill**: For area charts, specify the fill (e.g., "tozeroy", "tonexty").
+- **fillcolor**: The color used to fill the area under the line.
+- **stackgroup**: For stacked bar charts, specify the group for stacking.
+
+Generate `layout.json`:
+
+Include details such as:
+- **title**: The title of the graph, including text, font properties (family, size, color).
+- **xaxis** and **yaxis**: Configuration including title, range, showgrid, gridcolor, zeroline, zerolinecolor, showticklabels, tickangle, tickfont.
+- **zaxis**: Configuration for 3D plots including title, range, showgrid, gridcolor, zeroline, zerolinecolor, showticklabels, tickangle, tickfont.
+- **legend**: Properties including orientation, x, y, xanchor, font.
+- **margin**: Values for l (left), r (right), b (bottom), t (top), pad.
+- **plot_bgcolor** and **paper_bgcolor**: Background colors of the plot area and paper.
+- **scene**: For 3D plots, configuration for the 3D scene, including camera angles, lighting, and aspect ratio.
+
+Generate `config.json`:
+
+Include configuration settings such as:
+- **responsive**: Whether the graph is responsive (boolean).
+- **displayModeBar**: Whether the mode bar is displayed (boolean).
+- **modeBarButtonsToRemove**: List of mode bar buttons to remove (e.g., ["toImage"]).
+- **scrollZoom**: Whether scrolling zoom is enabled (boolean).
+
+Output Format:
+
+Wrap each JSON output in specific XML-like tags:
+- `<data> ... </data>`
+- `<layout> ... </layout>`
+- `<config> ... </config>`
+
+Make sure to follow the JSON formatting guidelines:
+- **Double Quotes for Keys and Strings**: Ensure that all keys and string values in JSON are enclosed in double quotes (").
+  - Example: Instead of `"type": bar`, it should be `"type": "bar"`.
+- **No Trailing Commas**: Remove any trailing commas after the last element in arrays ([]) or objects ({}).
+  - Example: Instead of `"color": "rgba(55, 128, 191, 0.6)",`, it should be `"color": "rgba(55, 128, 191, 0.6)"`.
+
+Example Output:
+
+```xml
+<data>
+[
+  {
+    "type": "scatter",
+    "x": [1, 2, 3],
+    "y": [4, 5, 6],
+    "mode": "markers+lines",
+    "name": "Line Plot",
+    "marker": {
+      "color": "rgba(75, 192, 192, 0.6)",
+      "size": 8
+    },
+    "line": {
+      "color": "rgba(75, 192, 192, 1)",
+      "width": 2
+    }
+  },
+  {
+    "type": "bar",
+    "x": ["A", "B", "C"],
+    "y": [10, 15, 13],
+    "name": "Bar Chart",
+    "marker": {
+      "color": "rgba(255, 99, 132, 0.6)"
+    },
+    "hoverinfo": "x+y+text"
+  },
+  {
+    "type": "scatter",
+    "x": [1, 2, 3],
+    "y": [6, 7, 8],
+    "mode": "lines",
+    "fill": "tozeroy",
+    "name": "Area Chart",
+    "line": {
+      "color": "rgba(54, 162, 235, 1)",
+      "width": 2
+    },
+    "fillcolor": "rgba(54, 162, 235, 0.5)"
+  },
+  {
+    "type": "scatter3d",
+    "x": [1, 2, 3],
+    "y": [4, 5, 6],
+    "z": [7, 8, 9],
+    "mode": "markers",
+    "name": "3D Scatter Plot",
+    "marker": {
+      "color": "rgba(255, 159, 64, 0.8)",
+      "size": 5
+    },
+    "hoverinfo": "x+y+z+text"
+  },
+  {
+    "type": "surface",
+    "z": [
+      [10, 10.625, 12.5, 15.625, 20],
+      [5.625, 6.25, 8.125, 11.25, 15.625],
+      [0, 1.25, 3.125, 6.25, 10.625]
+    ],
+    "name": "Surface Plot",
+    "colorscale": "Viridis",
+    "hoverinfo": "z+name"
+  }
+]
+</data>
+<layout>
+{
+  "title": {
+    "text": "Complex Graph Example",
+    "font": {
+      "family": "Arial, sans-serif",
+      "size": 24,
+      "color": "#000000"
+    }
+  },
+  "xaxis": {
+    "title": {
+      "text": "X Axis",
+      "font": {
+        "family": "Arial, sans-serif",
+        "size": 18,
+        "color": "#000000"
+      }
+    },
+    "showgrid": true,
+    "gridcolor": "rgba(0, 0, 0, 0.1)",
+    "zeroline": true,
+    "zerolinecolor": "rgba(0, 0, 0, 0.1)"
+  },
+  "yaxis": {
+    "title": {
+      "text": "Y Axis",
+      "font": {
+        "family": "Arial, sans-serif",
+        "size": 18,
+        "color": "#000000"
+      }
+    },
+    "showgrid": true,
+    "gridcolor": "rgba(0, 0, 0, 0.1)",
+    "zeroline": true,
+    "zerolinecolor": "rgba(0, 0, 0, 0.1)"
+  },
+  "legend": {
+    "orientation": "h",
+    "x": 0.5,
+    "xanchor": "center",
+    "y": -0.2,
+    "font": {
+      "family": "Arial, sans-serif",
+      "size": 12,
+      "color": "#000000"
+    }
+  },
+  "margin": {
+    "l": 60,
+    "r": 30,
+    "b": 60,
+    "t": 60
+  },
+  "plot_bgcolor": "#ffffff",
+  "paper_bgcolor": "#ffffff",
+  "scene": {
+    "xaxis": {"title": "X Axis"},
+    "yaxis": {"title": "Y Axis"},
+    "zaxis": {"title": "Z Axis"}
+  }
+}
+</layout>
+<config>
+{
+  "responsive": true,
+  "displayModeBar": true,
+  "modeBarButtonsToRemove": ["toImage"],
+  "scrollZoom": true
+}
+</config>
+ 

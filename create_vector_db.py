@@ -14,8 +14,6 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 import config
 # Code to create vector database using FIASS
 def convert_pdf_to_vector_db(pdf_paths):
-    return " "
-
     text = ""
     for pdf_path in pdf_paths:
         pdf_reader = PdfReader(pdf_path)
