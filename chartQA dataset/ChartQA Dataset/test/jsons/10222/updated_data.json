@@ -1,0 +1,26 @@
+[
+    {
+        "type": "bar",
+        "x": [
+            "The Daily Show",
+            "The Colbert Report",
+            "Anderson Cooper 360",
+            "NBC Nightly News",
+            "The Rachel Maddow Show",
+            "The O'Reilly Factor"
+        ],
+        "y": [
+            36,
+            33,
+            47,
+            52,
+            53,
+            54
+        ],
+        "name": "Median Age of The Daily Show Viewers Lower than Other TV News Programs",
+        "marker": {
+            "color": "rgba(255, 99, 132, 0.6)"
+        },
+        "hoverinfo": "x+y+text"
+    }
+]

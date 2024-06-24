@@ -1,0 +1,48 @@
+{
+    "title": {
+        "text": "Number of Commercial Bank Branches per 100,000 Adults in 2011",
+        "font": {
+            "family": "Arial, sans-serif",
+            "size": 18,
+            "color": "#333333"
+        }
+    },
+    "xaxis": {
+        "title": {
+            "text": "Country",
+            "font": {
+                "family": "Arial, sans-serif",
+                "size": 14,
+                "color": "#333333"
+            }
+        },
+        "tickfont": {
+            "family": "Arial, sans-serif",
+            "size": 12,
+            "color": "#333333"
+        }
+    },
+    "yaxis": {
+        "title": {
+            "text": "Number of Branches per 100,000 Adults",
+            "font": {
+                "family": "Arial, sans-serif",
+                "size": 14,
+                "color": "#333333"
+            }
+        },
+        "tickfont": {
+            "family": "Arial, sans-serif",
+            "size": 12,
+            "color": "#333333"
+        }
+    },
+    "margin": {
+        "l": 60,
+        "r": 30,
+        "b": 60,
+        "t": 60
+    },
+    "plot_bgcolor": "#ffffff",
+    "paper_bgcolor": "#ffffff"
+}

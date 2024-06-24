@@ -1,0 +1,24 @@
+[
+    {
+        "type": "bar",
+        "x": [
+            "Ecuador",
+            "China",
+            "Ireland",
+            "Armenia",
+            "Israel"
+        ],
+        "y": [
+            0.02,
+            0.02,
+            0.01,
+            0,
+            0
+        ],
+        "name": "Natural Disaster Deaths as a Share of Total Deaths, 2014",
+        "marker": {
+            "color": "rgba(55, 128, 191, 0.6)"
+        },
+        "hoverinfo": "x+y+text"
+    }
+]

@@ -1,0 +1,22 @@
+[
+    {
+        "type": "bar",
+        "x": [
+            "United States Virgin Islands",
+            "Gabon",
+            "Southern Sub-Saharan Africa",
+            "Tonga"
+        ],
+        "y": [
+            0.13,
+            0.13,
+            0.07,
+            0.01
+        ],
+        "name": "Death Rate",
+        "marker": {
+            "color": "rgba(55, 128, 191, 0.6)"
+        },
+        "hoverinfo": "x+y+text"
+    }
+]

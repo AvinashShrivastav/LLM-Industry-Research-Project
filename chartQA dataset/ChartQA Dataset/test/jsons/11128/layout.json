@@ -1,0 +1,55 @@
+{
+    "title": {
+        "text": "European Millennials Say Success Is Out of Their Hands",
+        "font": {
+            "family": "Arial, sans-serif",
+            "size": 20,
+            "color": "#000000"
+        }
+    },
+    "xaxis": {
+        "title": {
+            "text": "Country",
+            "font": {
+                "family": "Arial, sans-serif",
+                "size": 14,
+                "color": "#000000"
+            }
+        },
+        "showgrid": false,
+        "zeroline": false
+    },
+    "yaxis": {
+        "title": {
+            "text": "% of Millennials",
+            "font": {
+                "family": "Arial, sans-serif",
+                "size": 14,
+                "color": "#000000"
+            }
+        },
+        "showgrid": true,
+        "gridcolor": "rgba(0, 0, 0, 0.1)",
+        "zeroline": true,
+        "zerolinecolor": "rgba(0, 0, 0, 0.1)"
+    },
+    "legend": {
+        "orientation": "h",
+        "x": 0.5,
+        "xanchor": "center",
+        "y": -0.2,
+        "font": {
+            "family": "Arial, sans-serif",
+            "size": 12,
+            "color": "#000000"
+        }
+    },
+    "margin": {
+        "l": 60,
+        "r": 30,
+        "b": 60,
+        "t": 60
+    },
+    "plot_bgcolor": "#ffffff",
+    "paper_bgcolor": "#ffffff"
+}

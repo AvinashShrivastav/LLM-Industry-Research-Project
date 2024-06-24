@@ -1,0 +1,46 @@
+[
+    {
+        "type": "bar",
+        "x": [
+            "Lamb & Mutton",
+            "Beef (beef herd)",
+            "Cheese",
+            "Milk",
+            "Beef (dairy herd)",
+            "Pig Meat",
+            "Nuts",
+            "Other Pulses",
+            "Poultry Meat",
+            "Eggs",
+            "Grains",
+            "Fish (farmed)",
+            "Groundnuts",
+            "Peas",
+            "Tofu (soybeans)",
+            "Prawns (farmed)"
+        ],
+        "y": [
+            184.8,
+            163.6,
+            39.8,
+            27.1,
+            21.9,
+            10.7,
+            7.9,
+            7.3,
+            7.1,
+            5.7,
+            4.6,
+            3.7,
+            3.5,
+            3.4,
+            2.2,
+            2
+        ],
+        "name": "Land Use",
+        "marker": {
+            "color": "rgba(55, 128, 191, 0.6)"
+        },
+        "hoverinfo": "x+y+text"
+    }
+]

@@ -1,0 +1,62 @@
+[
+    {
+        "type": "scatter",
+        "x": [
+            2000,
+            2004,
+            2008,
+            2012,
+            2016,
+            2020
+        ],
+        "y": [
+            50,
+            67,
+            63,
+            63,
+            74,
+            83
+        ],
+        "mode": "lines+markers",
+        "name": "Presidential Election",
+        "marker": {
+            "color": "rgba(255, 159, 64, 0.8)",
+            "size": 8
+        },
+        "line": {
+            "color": "rgba(255, 159, 64, 1)",
+            "width": 2
+        },
+        "hoverinfo": "x+y+text"
+    },
+    {
+        "type": "scatter",
+        "x": [
+            2000,
+            2004,
+            2008,
+            2012,
+            2016,
+            2020
+        ],
+        "y": [
+            44,
+            29,
+            32,
+            34,
+            22,
+            16
+        ],
+        "mode": "lines+markers",
+        "name": "Doesn't Matter",
+        "marker": {
+            "color": "rgba(54, 162, 235, 0.8)",
+            "size": 8
+        },
+        "line": {
+            "color": "rgba(54, 162, 235, 1)",
+            "width": 2
+        },
+        "hoverinfo": "x+y+text"
+    }
+]

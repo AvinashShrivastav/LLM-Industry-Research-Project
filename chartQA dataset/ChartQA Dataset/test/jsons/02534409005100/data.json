@@ -1,0 +1,32 @@
+[
+    {
+        "type": "bar",
+        "x": [
+            "Heart disease",
+            "Cancers",
+            "Stroke",
+            "Accidents",
+            "Pneumonia and influenza",
+            "Road accidents",
+            "Diabetes",
+            "Suicide",
+            "Tuberculosis"
+        ],
+        "y": [
+            371.7,
+            155.3,
+            104.7,
+            58.1,
+            32.5,
+            27.1,
+            17.7,
+            10.9,
+            3.9
+        ],
+        "name": "Number of Deaths",
+        "marker": {
+            "color": "rgba(255, 99, 132, 0.6)"
+        },
+        "hoverinfo": "x+y+text"
+    }
+]

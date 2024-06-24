@@ -1,0 +1,16 @@
+[
+    {
+        "type": "pie",
+        "labels": [
+            "Approve",
+            "Disapprove",
+            "Don't Know"
+        ],
+        "values": [
+            58,
+            39,
+            3
+        ],
+        "hoverinfo": "label+percent+value"
+    }
+]

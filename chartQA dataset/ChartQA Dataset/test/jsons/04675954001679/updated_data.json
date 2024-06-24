@@ -1,0 +1,14 @@
+[
+    {
+        "type": "bar",
+        "x": [
+            "Cayman Islands",
+            "Belize"
+        ],
+        "y": [
+            95.45,
+            7.21
+        ],
+        "name": "Teachers Trained"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "type": "bar",
+        "x": [
+            "Read a message such as text or email",
+            "Took a photo or video",
+            "Sent a message such as text or email",
+            "Received an incoming call",
+            "Checked to see if you've received any alerts",
+            "Placed a call",
+            "Used an app",
+            "Searched or browsed the web"
+        ],
+        "y": [
+            61,
+            58,
+            52,
+            52,
+            34,
+            33,
+            29,
+            25
+        ],
+        "name": "Social Activity",
+        "marker": {
+            "color": "rgba(55, 128, 191, 0.6)"
+        },
+        "hoverinfo": "x+y+text"
+    }
+]

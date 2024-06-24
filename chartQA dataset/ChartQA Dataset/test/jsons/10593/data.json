@@ -1,0 +1,157 @@
+[
+    {
+        "type": "scatter",
+        "x": [
+            1,
+            2,
+            3
+        ],
+        "y": [
+            4,
+            5,
+            6
+        ],
+        "mode": "markers+lines",
+        "name": "Line Plot",
+        "marker": {
+            "color": "rgba(75, 192, 192, 0.6)",
+            "size": 8
+        },
+        "line": {
+            "color": "rgba(75, 192, 192, 1)",
+            "width": 2
+        }
+    },
+    {
+        "type": "area",
+        "x": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+        ],
+        "y": [
+            400,
+            430,
+            550,
+            620,
+            580,
+            600,
+            630,
+            700,
+            670,
+            630,
+            600,
+            500
+        ],
+        "name": "Housing",
+        "marker": {
+            "color": "rgba(255, 159, 64, 0.8)"
+        },
+        "line": {
+            "color": "rgba(255, 159, 64, 1)",
+            "width": 2
+        },
+        "fill": "tozeroy"
+    },
+    {
+        "type": "bar",
+        "x": [
+            "A",
+            "B",
+            "C"
+        ],
+        "y": [
+            10,
+            15,
+            13
+        ],
+        "name": "Bar Chart",
+        "marker": {
+            "color": "rgba(255, 99, 132, 0.6)"
+        },
+        "hoverinfo": "x+y+text"
+    },
+    {
+        "type": "scatter",
+        "x": [
+            1,
+            2,
+            3
+        ],
+        "y": [
+            6,
+            7,
+            8
+        ],
+        "mode": "lines",
+        "name": "Area Chart",
+        "line": {
+            "color": "rgba(54, 162, 235, 1)",
+            "width": 2
+        },
+        "fillcolor": "rgba(54, 162, 235, 0.5)"
+    },
+    {
+        "type": "scatter3d",
+        "x": [
+            1,
+            2,
+            3
+        ],
+        "y": [
+            4,
+            5,
+            6
+        ],
+        "z": [
+            7,
+            8,
+            9
+        ],
+        "mode": "markers",
+        "name": "3D Scatter Plot",
+        "marker": {
+            "color": "rgba(255, 159, 64, 0.8)",
+            "size": 5
+        },
+        "hoverinfo": "x+y+z+text"
+    },
+    {
+        "type": "surface",
+        "z": [
+            [
+                10,
+                10.625,
+                12.5,
+                15.625,
+                20
+            ],
+            [
+                5.625,
+                6.25,
+                8.125,
+                11.25,
+                15.625
+            ],
+            [
+                0,
+                1.25,
+                3.125,
+                6.25,
+                10.625
+            ]
+        ],
+        "name": "Surface Plot",
+        "colorscale": "Viridis",
+        "hoverinfo": "z+name"
+    }
+]

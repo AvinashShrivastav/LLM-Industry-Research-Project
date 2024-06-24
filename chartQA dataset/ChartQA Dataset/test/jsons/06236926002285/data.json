@@ -1,0 +1,46 @@
+[
+    {
+        "type": "bar",
+        "x": [
+            "Unsafe sex",
+            "Alcohol use",
+            "High blood pressure",
+            "Smoking",
+            "High body-mass index (obesity)",
+            "High blood sugar",
+            "Diet low in fruits",
+            "Drug use",
+            "Diet low in vegetables",
+            "Outdoor air pollution",
+            "Household air pollution",
+            "Unsafe water source",
+            "Secondhand smoke",
+            "Iron deficiency",
+            "Poor sanitation",
+            "No access to handwashing facility",
+            "Low physical activity",
+            "Low bone mineral density"
+        ],
+        "y": [
+            1.31,
+            880756,
+            619328,
+            597653,
+            409812,
+            334864,
+            316783,
+            226833,
+            200275,
+            194601,
+            181256,
+            122777,
+            105318,
+            96915,
+            92072,
+            68467,
+            48930,
+            13135
+        ],
+        "name": "Number of deaths by risk factor aged 15-49, World, 2004"
+    }
+]

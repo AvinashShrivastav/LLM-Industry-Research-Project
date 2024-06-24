@@ -1,0 +1,17 @@
+[
+    {
+        "type": "pie",
+        "labels": [
+            "Strong ties with U.S.",
+            "Equally close ties with U.S. and Russia",
+            "Strong ties with Russia",
+            "Don't know"
+        ],
+        "values": [
+            57,
+            21,
+            15,
+            7
+        ]
+    }
+]

@@ -1,0 +1,71 @@
+[
+    {
+        "type": "bar",
+        "x": [
+            "Using landline phone",
+            "Calling on your cell phone",
+            "Sending text messages",
+            "Sending email",
+            "Using chat or IM",
+            "Using social media sites"
+        ],
+        "y": [
+            [
+                16,
+                51,
+                19,
+                12
+            ],
+            [
+                9,
+                43,
+                29,
+                17
+            ],
+            [
+                7,
+                32,
+                37,
+                22
+            ],
+            [
+                5,
+                35,
+                36,
+                21
+            ],
+            [
+                4,
+                25,
+                36,
+                32
+            ],
+            [
+                2,
+                14,
+                28,
+                53
+            ]
+        ],
+        "name": "Communication Method",
+        "hoverinfo": "text",
+        "text": [
+            "Very secure: 16<br>Somewhat secure: 51<br>Not very secure: 19<br>Not at all secure: 12",
+            "Very secure: 9<br>Somewhat secure: 43<br>Not very secure: 29<br>Not at all secure: 17",
+            "Very secure: 7<br>Somewhat secure: 32<br>Not very secure: 37<br>Not at all secure: 22",
+            "Very secure: 5<br>Somewhat secure: 35<br>Not very secure: 36<br>Not at all secure: 21",
+            "Very secure: 4<br>Somewhat secure: 25<br>Not very secure: 36<br>Not at all secure: 32",
+            "Very secure: 2<br>Somewhat secure: 14<br>Not very secure: 28<br>Not at all secure: 53"
+        ],
+        "marker": {
+            "color": [
+                "rgba(54, 162, 235, 0.6)",
+                "rgba(255, 159, 64, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 206, 86, 0.6)",
+                "rgba(75, 192, 192, 0.6)",
+                "rgba(153, 102, 255, 0.6)"
+            ]
+        }
+    }
+]

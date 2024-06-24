@@ -1,0 +1,38 @@
+[
+    {
+        "type": "scatter",
+        "x": [
+            2013,
+            2014,
+            2015
+        ],
+        "y": [
+            51,
+            23,
+            15
+        ],
+        "name": "US",
+        "marker": {
+            "color": "rgba(255, 99, 132, 0.6)"
+        },
+        "hoverinfo": "x+y+text"
+    },
+    {
+        "type": "scatter",
+        "x": [
+            2013,
+            2014,
+            2015
+        ],
+        "y": [
+            63,
+            39,
+            31
+        ],
+        "name": "EU",
+        "marker": {
+            "color": "rgba(54, 162, 235, 0.6)"
+        },
+        "hoverinfo": "x+y+text"
+    }
+]

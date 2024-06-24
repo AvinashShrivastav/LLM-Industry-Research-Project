@@ -1,0 +1,28 @@
+[
+    {
+        "type": "bar",
+        "x": [
+            "Total",
+            "White",
+            "Black",
+            "Hispanic",
+            "Republican",
+            "Independent",
+            "Democrat"
+        ],
+        "y": [
+            34,
+            38,
+            28,
+            52,
+            49,
+            37,
+            19
+        ],
+        "name": "Party Divide Wider Than Racial Gap in Views of Removing Confederate Flag",
+        "marker": {
+            "color": "rgba(255, 99, 132, 0.6)"
+        },
+        "hoverinfo": "x+y+text"
+    }
+]

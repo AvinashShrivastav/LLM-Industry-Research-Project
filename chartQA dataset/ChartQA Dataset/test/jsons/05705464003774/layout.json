@@ -1,0 +1,46 @@
+{
+    "title": {
+        "text": "Government Expenditure on Pre-Primary Education as Share of GDP, 2005",
+        "font": {
+            "family": "Arial, sans-serif",
+            "size": 24,
+            "color": "#000000"
+        }
+    },
+    "xaxis": {
+        "title": {
+            "text": "Country",
+            "font": {
+                "family": "Arial, sans-serif",
+                "size": 18,
+                "color": "#000000"
+            }
+        },
+        "showgrid": true,
+        "gridcolor": "rgba(0, 0, 0, 0.1)",
+        "zeroline": true,
+        "zerolinecolor": "rgba(0, 0, 0, 0.1)"
+    },
+    "yaxis": {
+        "title": {
+            "text": "Expenditure as Share of GDP",
+            "font": {
+                "family": "Arial, sans-serif",
+                "size": 18,
+                "color": "#000000"
+            }
+        },
+        "showgrid": true,
+        "gridcolor": "rgba(0, 0, 0, 0.1)",
+        "zeroline": true,
+        "zerolinecolor": "rgba(0, 0, 0, 0.1)"
+    },
+    "margin": {
+        "l": 60,
+        "r": 30,
+        "b": 60,
+        "t": 60
+    },
+    "plot_bgcolor": "#ffffff",
+    "paper_bgcolor": "#ffffff"
+}

@@ -1,0 +1,8 @@
+{
+    "responsive": true,
+    "displayModeBar": true,
+    "modeBarButtonsToRemove": [
+        "toImage"
+    ],
+    "scrollZoom": true
+}

@@ -1,0 +1,16 @@
+[
+    {
+        "type": "bar",
+        "x": [
+            "Mali",
+            "Denmark",
+            "Kenya"
+        ],
+        "y": [
+            27.5,
+            18.3,
+            17.3
+        ],
+        "name": "Mortality Rate"
+    }
+]

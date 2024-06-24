@@ -1,0 +1,57 @@
+{
+    "title": {
+        "text": "Russians Overwhelmingly Support Putin's Foreign and Domestic Policies",
+        "font": {
+            "family": "Arial, sans-serif",
+            "size": 20,
+            "color": "#000000"
+        }
+    },
+    "xaxis": {
+        "title": {
+            "text": "Approval Percentage",
+            "font": {
+                "family": "Arial, sans-serif",
+                "size": 14,
+                "color": "#000000"
+            }
+        },
+        "showgrid": true,
+        "gridcolor": "rgba(0, 0, 0, 0.1)",
+        "zeroline": true,
+        "zerolinecolor": "rgba(0, 0, 0, 0.1)"
+    },
+    "yaxis": {
+        "title": {
+            "text": "Policy",
+            "font": {
+                "family": "Arial, sans-serif",
+                "size": 14,
+                "color": "#000000"
+            }
+        },
+        "showgrid": false,
+        "gridcolor": "rgba(0, 0, 0, 0.1)",
+        "zeroline": true,
+        "zerolinecolor": "rgba(0, 0, 0, 0.1)"
+    },
+    "legend": {
+        "orientation": "h",
+        "x": 0.5,
+        "xanchor": "center",
+        "y": -0.2,
+        "font": {
+            "family": "Arial, sans-serif",
+            "size": 12,
+            "color": "#000000"
+        }
+    },
+    "margin": {
+        "l": 100,
+        "r": 30,
+        "b": 100,
+        "t": 60
+    },
+    "plot_bgcolor": "#ffffff",
+    "paper_bgcolor": "#ffffff"
+}

@@ -1,0 +1,30 @@
+[
+    {
+        "type": "bar",
+        "x": [
+            "U.S.",
+            "Germany",
+            "Italy",
+            "Greece",
+            "Poland",
+            "France",
+            "Spain",
+            "UK"
+        ],
+        "y": [
+            43,
+            63,
+            63,
+            62,
+            62,
+            54,
+            48,
+            37
+        ],
+        "name": "Success is out of control",
+        "marker": {
+            "color": "rgba(255, 99, 132, 0.6)"
+        },
+        "hoverinfo": "x+y+text"
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "type": "bar",
+        "x": [
+            "Finland",
+            "Georgia",
+            "Western Asia"
+        ],
+        "y": [
+            175.09,
+            79.84,
+            69.62
+        ],
+        "name": "Daily Meat Consumption"
+    }
+]

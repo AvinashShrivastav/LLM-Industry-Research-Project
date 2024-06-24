@@ -1,0 +1,29 @@
+[
+    {
+        "type": "bar",
+        "x": [
+            "Relations w/ China",
+            "Relations w/ U.S.",
+            "Relations w/ Ukraine",
+            "Relations w/ EU",
+            "Energy policy",
+            "Economy",
+            "Corruption"
+        ],
+        "y": [
+            90,
+            85,
+            83,
+            82,
+            73,
+            70,
+            62
+        ],
+        "name": "Approval Ratings",
+        "orientation": "h",
+        "marker": {
+            "color": "rgba(255, 159, 64, 0.8)"
+        },
+        "hoverinfo": "x+y+text"
+    }
+]

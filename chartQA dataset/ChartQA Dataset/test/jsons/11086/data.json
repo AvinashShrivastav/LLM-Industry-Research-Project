@@ -1,0 +1,34 @@
+[
+    {
+        "type": "pie",
+        "labels": [
+            "Support Active Engagement",
+            "Focus on Scientific Work"
+        ],
+        "values": [
+            87,
+            13
+        ],
+        "hoverinfo": "label+percent+value"
+    },
+    {
+        "type": "bar",
+        "x": [
+            "Strongly Support",
+            "Support",
+            "Oppose",
+            "Strongly Oppose"
+        ],
+        "y": [
+            22,
+            52,
+            19,
+            7
+        ],
+        "name": "Support for Active Engagement in Public Policy Debates",
+        "marker": {
+            "color": "rgba(255, 99, 132, 0.6)"
+        },
+        "hoverinfo": "x+y+text"
+    }
+]

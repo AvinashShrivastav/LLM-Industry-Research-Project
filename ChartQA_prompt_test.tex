@@ -1,0 +1,589 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{adjustbox}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\title{Research Project Documentation}
+\begin{document}
+\maketitle
+\section*{Test Run}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{D:/Research Internship/chartQA dataset/ChartQA Dataset/train/png/34.png}
+\caption{Figure: 34.png}
+\end{figure}
+\section*{Original Data: 34.csv}
+\begin{center}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{c|c|c}
+Year & It matters wins the really who presidential election & Things will be pretty much the same regardless of who is elected \\
+2000 & 50 & 44 \\
+2004 & 67 & 29 \\
+2008 & 63 & 32 \\
+2012 & 63 & 34 \\
+2016 & 74 & 22 \\
+2020 & 83 & 16 \\
+\end{tabular}
+
+\end{adjustbox}
+\end{center}
+\section*{Extracted Data: 34.csv}
+\begin{center}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{c|c|c}
+Year & Presidential Election & Doesn't Matter \\
+2000 & 50 & 44 \\
+2004 & 67 & 29 \\
+2008 & 63 & 32 \\
+2012 & 63 & 34 \\
+2016 & 74 & 22 \\
+2020 & 83 & 16 \\
+\end{tabular}
+
+\end{adjustbox}
+\end{center}
+\section*{Prompt Used}
+\begin{verbatim}
+
+Task: Extract detailed information from a given graph image and generate JSON files (`data.json`, `layout.json`, and `config.json`) compatible with Plotly. Use the specified delimiters to wrap each JSON section.
+
+### Instructions:
+
+#### Graph Analysis:
+
+1. **Identify and categorize** the plot types present in the graph. Include both simple and complex plots:
+   - Simple plots: `scatter`, `bar`, `pie`, `line`, `area`
+   - Complex plots: `stacked bar`, `scatter3d`, `surface`.
+   Confirm the presence of each plot type. Ensure that area plots are identified with `"type": "area"`.
+
+2. **Extract data points** for each plot type:
+   - For `scatter`, `line`, and `area` plots: Extract `x` and `y` values.
+   - For `bar` and `stacked bar` plots: Extract `x` (categories) and `y` values.
+   - For `pie` charts: Extract `labels` and `values`.
+   - For `scatter3d` and `surface` plots: Extract `x`, `y`, and `z` values.
+
+3. **Note any multiple plots** on the same figure and their configurations:
+   - For stacked plots, identify the stacking order and group.
+   - For area charts, ensure `fill` is specified correctly.
+
+#### Generate `data.json`:
+
+For each plot, include details such as:
+- **type**: The type of plot (e.g., `"scatter"`, `"bar"`, `"pie"`, `"area"`, `"scatter3d"`, `"surface"`).
+  - For area charts, use `"type": "scatter"` and specify `"fill"`.
+- **x**, **y**, and **z** (if applicable): Arrays of data points for the `x`, `y`, and `z` axes.
+- **labels** and **values** for pie charts.
+- **mode**: For line and scatter plots (e.g., `"markers"`, `"lines"`, `"markers+lines"`).
+- **name**: Legend entry for the plot.
+- **marker**: Properties such as color, size, and symbol for markers.
+- **line**: Properties such as color, width, and dash style for lines.
+- **text**: Hover text for each data point.
+- **hoverinfo**: Information displayed on hover (e.g., `"x+y+text"`).
+- **fill**: For area charts, specify the fill (e.g., `"tozeroy"`, `"tonexty"`).
+- **fillcolor**: The color used to fill the area under the line.
+- **stackgroup**: For stacked bar charts, specify the group for stacking.
+
+#### Generate `layout.json`:
+
+Include details such as:
+- **title**: The title of the graph, including text and font properties.
+- **xaxis** and **yaxis**: Configuration including title, range, grid properties, and tick settings.
+- **zaxis**: Configuration for 3D plots including title, range, and grid properties.
+- **legend**: Properties including orientation and positioning.
+- **margin**: Values for left, right, bottom, top, and padding.
+- **plot\_bgcolor** and **paper\_bgcolor**: Background colors of the plot area and paper.
+- **scene**: For 3D plots, configuration for the 3D scene, including camera angles, lighting, and aspect ratio.
+
+#### Generate `config.json`:
+
+Include configuration settings such as:
+- **responsive**: Whether the graph is responsive.
+- **displayModeBar**: Whether the mode bar is displayed.
+- **modeBarButtonsToRemove**: List of mode bar buttons to remove.
+- **scrollZoom**: Whether scrolling zoom is enabled.
+
+#### Generate `<csv>`:
+
+Include CSV data formatted as follows:
+```csv
+x,y
+1,4
+2,5
+3,6
+```
+Replace x,y, 1,4, 2,5, and 3,6 with actual data extracted from the graph image.
+
+Output Format:
+Wrap each JSON output in specific XML-like tags:
+
+<data> ... </data>
+<layout> ... </layout>
+<config> ... </config>
+<csv> ... </csv>
+Make sure to follow the JSON formatting guidelines:
+
+Double Quotes for Keys and Strings: Ensure all keys and string values in JSON are enclosed in double quotes.
+No Trailing Commas: Remove any trailing commas after the last element in arrays or objects.
+Example Output:
+
+<data>
+[
+  {
+    "type": "scatter",
+    "x": [1, 2, 3],
+    "y": [4, 5, 6],
+    "mode": "markers+lines",
+    "name": "Line Plot",
+    "marker": {
+      "color": "rgba(75, 192, 192, 0.6)",
+      "size": 8
+    },
+    "line": {
+      "color": "rgba(75, 192, 192, 1)",
+      "width": 2
+    }
+  },
+  {
+    "type": "area",
+    "x": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "y": [400, 430, 550, 620, 580, 600, 630, 700, 670, 630, 600, 500],
+    "name": "Housing",
+    "marker": {
+      "color": "rgba(255, 159, 64, 0.8)"
+    },
+    "line": {
+      "color": "rgba(255, 159, 64, 1)",
+      "width": 2
+    }
+  },
+
+  {
+    "type": "bar",
+    "x": ["A", "B", "C"],
+    "y": [10, 15, 13],
+    "name": "Bar Chart",
+    "marker": {
+      "color": "rgba(255, 99, 132, 0.6)"
+    },
+    "hoverinfo": "x+y+text"
+  },
+  {
+    "type": "scatter",
+    "x": [1, 2, 3],
+    "y": [6, 7, 8],
+    "mode": "lines",
+    "fill": "tozeroy",
+    "name": "Area Chart",
+    "line": {
+      "color": "rgba(54, 162, 235, 1)",
+      "width": 2
+    },
+    "fillcolor": "rgba(54, 162, 235, 0.5)"
+  },
+  {
+    "type": "scatter3d",
+    "x": [1, 2, 3],
+    "y": [4, 5, 6],
+    "z": [7, 8, 9],
+    "mode": "markers",
+    "name": "3D Scatter Plot",
+    "marker": {
+      "color": "rgba(255, 159, 64, 0.8)",
+      "size": 5
+    },
+    "hoverinfo": "x+y+z+text"
+  },
+  {
+    "type": "surface",
+    "z": [
+      [10, 10.625, 12.5, 15.625, 20],
+      [5.625, 6.25, 8.125, 11.25, 15.625],
+      [0, 1.25, 3.125, 6.25, 10.625]
+    ],
+    "name": "Surface Plot",
+    "colorscale": "Viridis",
+    "hoverinfo": "z+name"
+  }
+]
+</data>
+<layout>
+{
+  "title": {
+    "text": "Complex Graph Example",
+    "font": {
+      "family": "Arial, sans-serif",
+      "size": 24,
+      "color": "#000000"
+    }
+  },
+  "xaxis": {
+    "title": {
+      "text": "X Axis",
+      "font": {
+        "family": "Arial, sans-serif",
+        "size": 18,
+        "color": "#000000"
+      }
+    },
+    "showgrid": true,
+    "gridcolor": "rgba(0, 0, 0, 0.1)",
+    "zeroline": true,
+    "zerolinecolor": "rgba(0, 0, 0, 0.1)"
+  },
+  "yaxis": {
+    "title": {
+      "text": "Y Axis",
+      "font": {
+        "family": "Arial, sans-serif",
+        "size": 18,
+        "color": "#000000"
+      }
+    },
+    "showgrid": true,
+    "gridcolor": "rgba(0, 0, 0, 0.1)",
+    "zeroline": true,
+    "zerolinecolor": "rgba(0, 0, 0, 0.1)"
+  },
+  "legend": {
+    "orientation": "h",
+    "x": 0.5,
+    "xanchor": "center",
+    "y": -0.2,
+    "font": {
+      "family": "Arial, sans-serif",
+      "size": 12,
+      "color": "#000000"
+    }
+  },
+  "margin": {
+    "l": 60,
+    "r": 30,
+    "b": 60,
+    "t": 60
+  },
+  "plot\_bgcolor": "#ffffff",
+  "paper\_bgcolor": "#ffffff",
+  "scene": {
+    "xaxis": {"title": "X Axis"},
+    "yaxis": {"title": "Y Axis"},
+    "zaxis": {"title": "Z Axis"}
+  }
+}
+</layout>
+<config>
+{
+  "responsive": true,
+  "displayModeBar": true,
+  "modeBarButtonsToRemove": ["toImage"],
+  "scrollZoom": true
+}
+</config>
+<csv>
+x,y
+1,4
+2,5
+3,6
+</csv>
+\end{verbatim}
+\section*{Extracted JSON}
+\subsection*{data}
+\begin{verbatim}
+[
+    \{
+        "type": "scatter",
+        "x": [
+            2000,
+            2004,
+            2008,
+            2012,
+            2016,
+            2020
+        ],
+        "y": [
+            50,
+            67,
+            63,
+            63,
+            74,
+            83
+        ],
+        "mode": "lines+markers",
+        "name": "Presidential Election",
+        "marker": \{
+            "color": "rgba(255, 159, 64, 0.8)",
+            "size": 8
+        \},
+        "line": \{
+            "color": "rgba(255, 159, 64, 1)",
+            "width": 2
+        \},
+        "hoverinfo": "x+y+text"
+    \},
+    \{
+        "type": "scatter",
+        "x": [
+            2000,
+            2004,
+            2008,
+            2012,
+            2016,
+            2020
+        ],
+        "y": [
+            44,
+            29,
+            32,
+            34,
+            22,
+            16
+        ],
+        "mode": "lines+markers",
+        "name": "Doesn't Matter",
+        "marker": \{
+            "color": "rgba(54, 162, 235, 0.8)",
+            "size": 8
+        \},
+        "line": \{
+            "color": "rgba(54, 162, 235, 1)",
+            "width": 2
+        \},
+        "hoverinfo": "x+y+text"
+    \}
+]
+\end{verbatim}
+\subsection*{layout}
+\begin{verbatim}
+\{
+    "title": \{
+        "text": "Voters Saying it Matters",
+        "font": \{
+            "family": "Arial, sans-serif",
+            "size": 24,
+            "color": "\#000000"
+        \}
+    \},
+    "xaxis": \{
+        "title": \{
+            "text": "Year",
+            "font": \{
+                "family": "Arial, sans-serif",
+                "size": 18,
+                "color": "\#000000"
+            \}
+        \},
+        "showgrid": true,
+        "gridcolor": "rgba(0, 0, 0, 0.1)",
+        "zeroline": true,
+        "zerolinecolor": "rgba(0, 0, 0, 0.1)"
+    \},
+    "yaxis": \{
+        "title": \{
+            "text": "Percentage of Voters",
+            "font": \{
+                "family": "Arial, sans-serif",
+                "size": 18,
+                "color": "\#000000"
+            \}
+        \},
+        "showgrid": true,
+        "gridcolor": "rgba(0, 0, 0, 0.1)",
+        "zeroline": true,
+        "zerolinecolor": "rgba(0, 0, 0, 0.1)"
+    \},
+    "legend": \{
+        "orientation": "h",
+        "x": 0.5,
+        "xanchor": "center",
+        "y": -0.2,
+        "font": \{
+            "family": "Arial, sans-serif",
+            "size": 12,
+            "color": "\#000000"
+        \}
+    \},
+    "margin": \{
+        "l": 60,
+        "r": 30,
+        "b": 60,
+        "t": 60
+    \},
+    "plot\_bgcolor": "\#ffffff",
+    "paper\_bgcolor": "\#ffffff"
+\}
+\end{verbatim}
+\subsection*{config}
+\begin{verbatim}
+\{
+    "responsive": true,
+    "displayModeBar": true,
+    "modeBarButtonsToRemove": [
+        "toImage"
+    ],
+    "scrollZoom": true
+\}
+\end{verbatim}
+\section*{Updated JSON}
+\subsection*{updated\_data}
+\begin{verbatim}
+[
+    \{
+        "type": "scatter",
+        "x": [
+            2000,
+            2004,
+            2008,
+            2012,
+            2016,
+            2020
+        ],
+        "y": [
+            50,
+            67,
+            63,
+            63,
+            74,
+            83
+        ],
+        "mode": "lines+markers",
+        "name": "Presidential Election",
+        "marker": \{
+            "color": "rgba(255, 159, 64, 0.8)",
+            "size": 8
+        \},
+        "line": \{
+            "color": "rgba(255, 159, 64, 1)",
+            "width": 2
+        \},
+        "hoverinfo": "x+y+text"
+    \},
+    \{
+        "type": "scatter",
+        "x": [
+            2000,
+            2004,
+            2008,
+            2012,
+            2016,
+            2020
+        ],
+        "y": [
+            44,
+            29,
+            32,
+            34,
+            22,
+            16
+        ],
+        "mode": "lines+markers",
+        "name": "Doesn't Matter",
+        "marker": \{
+            "color": "rgba(54, 162, 235, 0.8)",
+            "size": 8
+        \},
+        "line": \{
+            "color": "rgba(54, 162, 235, 1)",
+            "width": 2
+        \},
+        "hoverinfo": "x+y+text"
+    \}
+]
+\end{verbatim}
+\subsection*{updated\_layout}
+\begin{verbatim}
+\{
+    "title": \{
+        "text": "Voters Saying it Matters",
+        "font": \{
+            "family": "Arial, sans-serif",
+            "size": 24,
+            "color": "\#000000"
+        \}
+    \},
+    "xaxis": \{
+        "title": \{
+            "text": "Year",
+            "font": \{
+                "family": "Arial, sans-serif",
+                "size": 18,
+                "color": "\#000000"
+            \}
+        \},
+        "showgrid": true,
+        "gridcolor": "rgba(0, 0, 0, 0.1)",
+        "zeroline": true,
+        "zerolinecolor": "rgba(0, 0, 0, 0.1)"
+    \},
+    "yaxis": \{
+        "title": \{
+            "text": "Percentage of Voters",
+            "font": \{
+                "family": "Arial, sans-serif",
+                "size": 18,
+                "color": "\#000000"
+            \}
+        \},
+        "showgrid": true,
+        "gridcolor": "rgba(0, 0, 0, 0.1)",
+        "zeroline": true,
+        "zerolinecolor": "rgba(0, 0, 0, 0.1)"
+    \},
+    "legend": \{
+        "orientation": "h",
+        "x": 0.5,
+        "xanchor": "center",
+        "y": -0.2,
+        "font": \{
+            "family": "Arial, sans-serif",
+            "size": 12,
+            "color": "\#000000"
+        \}
+    \},
+    "margin": \{
+        "l": 60,
+        "r": 30,
+        "b": 60,
+        "t": 60
+    \},
+    "plot\_bgcolor": "\#ffffff",
+    "paper\_bgcolor": "\#ffffff"
+\}
+\end{verbatim}
+\subsection*{updated\_config}
+\begin{verbatim}
+\{
+    "responsive": true,
+    "displayModeBar": true,
+    "modeBarButtonsToRemove": [
+        "toImage"
+    ],
+    "scrollZoom": true
+\}
+\end{verbatim}
+\section*{Updated Chart}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{new_image.png}
+\caption{Updated Chart: new_image.png}
+\end{figure}
+\section*{Performance Metrics}
+\begin{longtable}{|c|c|c|c|}
+\hline
+Task & Model Used & Description & Time Taken (s) \\
+\hline
+\endfirsthead
+\hline
+Task & Model Used & Description & Time Taken (s) \\
+\hline
+\endhead
+\hline
+\endfoot
+Processing Image to JSON & Gemini Vision Pro (default) & Time taken to convert the uploaded image to JSON format & 21.81 \\
+\hline
+Updating JSON & ChatGPT 3.5 (Default) & Time taken to update the JSON with new data & 0.00 \\
+\hline
+Plotting Updated JSON & N/A & Time taken to plot the updated JSON & 0.17 \\
+\hline
+\end{longtable}
+\end{document}

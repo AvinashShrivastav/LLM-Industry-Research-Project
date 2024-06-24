@@ -1,0 +1,16 @@
+[
+    {
+        "type": "bar",
+        "x": [
+            "United Kingdom",
+            "Colombia",
+            "Mauritius"
+        ],
+        "y": [
+            0.3,
+            0.1,
+            0.06
+        ],
+        "name": "Government Expenditure on Pre-Primary Education as Share of GDP, 2005"
+    }
+]

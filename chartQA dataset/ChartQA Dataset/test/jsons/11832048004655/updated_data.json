@@ -1,0 +1,14 @@
+[
+    {
+        "type": "bar",
+        "x": [
+            "Lithuania",
+            "Bolivia"
+        ],
+        "y": [
+            19,
+            9.3
+        ],
+        "name": "Commercial Bank Branches"
+    }
+]

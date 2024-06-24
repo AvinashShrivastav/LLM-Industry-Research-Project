@@ -1,0 +1,21 @@
+[
+    {
+        "type": "bar",
+        "x": [
+            "Burkina Faso",
+            "Cambodia"
+        ],
+        "y": [
+            75,
+            70
+        ],
+        "name": "Countries",
+        "marker": {
+            "color": [
+                "rgba(55, 128, 191, 0.6)",
+                "rgba(255, 159, 64, 0.6)"
+            ]
+        },
+        "hoverinfo": "x+y+text"
+    }
+]

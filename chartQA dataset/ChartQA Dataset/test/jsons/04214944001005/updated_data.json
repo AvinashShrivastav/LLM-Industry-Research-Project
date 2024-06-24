@@ -1,0 +1,52 @@
+[
+    {
+        "type": "bar",
+        "x": [
+            "Obesity",
+            "High blood sugar",
+            "Smoking",
+            "Air pollution (outdoor & indoor)",
+            "High cholesterol",
+            "Outdoor air pollution",
+            "Diet low in vegetables",
+            "Indoor air pollution",
+            "Diet low in fruits",
+            "Secondhand smoke",
+            "Drug use",
+            "Iron deficiency",
+            "Diet high in salt",
+            "Child wasting",
+            "Low physical activity",
+            "Vitamin A deficiency",
+            "Unsafe water source",
+            "Unsafe sanitation",
+            "Non-exclusive breastfeeding",
+            "Child stunting",
+            "Zinc deficiency"
+        ],
+        "y": [
+            1001,
+            879,
+            676,
+            474,
+            360,
+            328,
+            177,
+            169,
+            168,
+            144,
+            133,
+            131,
+            119,
+            86,
+            76,
+            43,
+            38,
+            9,
+            8,
+            7,
+            3
+        ],
+        "name": "Disease burden by risk factor, Northern Mariana Islands, 1990"
+    }
+]

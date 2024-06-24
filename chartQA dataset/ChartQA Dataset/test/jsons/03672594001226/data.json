@@ -1,0 +1,16 @@
+[
+    {
+        "type": "bar",
+        "x": [
+            "North America",
+            "Philippines",
+            "Croatia"
+        ],
+        "y": [
+            3245,
+            1846.5,
+            0
+        ],
+        "name": "Countries"
+    }
+]

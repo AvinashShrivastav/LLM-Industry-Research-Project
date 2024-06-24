@@ -1,0 +1,45 @@
+{
+    "title": {
+        "text": "Number of deaths by risk factor aged 15-49, World, 2004",
+        "font": {
+            "family": "Arial, sans-serif",
+            "size": 24,
+            "color": "#000000"
+        }
+    },
+    "xaxis": {
+        "title": {
+            "text": "Risk factor",
+            "font": {
+                "family": "Arial, sans-serif",
+                "size": 18,
+                "color": "#000000"
+            }
+        },
+        "tickangle": -45,
+        "showgrid": false,
+        "zeroline": false
+    },
+    "yaxis": {
+        "title": {
+            "text": "Number of deaths",
+            "font": {
+                "family": "Arial, sans-serif",
+                "size": 18,
+                "color": "#000000"
+            }
+        },
+        "showgrid": true,
+        "gridcolor": "rgba(0, 0, 0, 0.1)",
+        "zeroline": true,
+        "zerolinecolor": "rgba(0, 0, 0, 0.1)"
+    },
+    "margin": {
+        "l": 100,
+        "r": 100,
+        "b": 100,
+        "t": 100
+    },
+    "plot_bgcolor": "#ffffff",
+    "paper_bgcolor": "#ffffff"
+}

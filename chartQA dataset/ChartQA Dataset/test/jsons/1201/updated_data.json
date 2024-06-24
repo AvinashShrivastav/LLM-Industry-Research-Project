@@ -1,0 +1,46 @@
+[
+    {
+        "type": "bar",
+        "x": [
+            "18-29",
+            "30-49",
+            "50-64",
+            "65+",
+            "All adults"
+        ],
+        "y": [
+            26,
+            34,
+            43,
+            49,
+            38
+        ],
+        "name": "Personal Health",
+        "marker": {
+            "color": "rgba(255, 99, 132, 0.6)"
+        },
+        "hoverinfo": "x+y+text"
+    },
+    {
+        "type": "bar",
+        "x": [
+            "18-29",
+            "30-49",
+            "50-64",
+            "65+",
+            "All adults"
+        ],
+        "y": [
+            40,
+            43,
+            46,
+            32,
+            41
+        ],
+        "name": "Personal Finances",
+        "marker": {
+            "color": "rgba(54, 162, 235, 0.6)"
+        },
+        "hoverinfo": "x+y+text"
+    }
+]

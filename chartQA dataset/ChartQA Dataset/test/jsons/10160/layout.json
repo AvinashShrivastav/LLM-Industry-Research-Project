@@ -1,0 +1,56 @@
+{
+    "title": {
+        "text": "Cell Phone Usage During Social Activities",
+        "font": {
+            "family": "Arial, sans-serif",
+            "size": 20,
+            "color": "#000000"
+        }
+    },
+    "xaxis": {
+        "title": {
+            "text": "Activity",
+            "font": {
+                "family": "Arial, sans-serif",
+                "size": 16,
+                "color": "#000000"
+            }
+        },
+        "tickangle": -45,
+        "showgrid": false,
+        "zeroline": false
+    },
+    "yaxis": {
+        "title": {
+            "text": "Percentage of Cell Phone Owners",
+            "font": {
+                "family": "Arial, sans-serif",
+                "size": 16,
+                "color": "#000000"
+            }
+        },
+        "showgrid": true,
+        "gridcolor": "rgba(0, 0, 0, 0.1)",
+        "zeroline": true,
+        "zerolinecolor": "rgba(0, 0, 0, 0.1)"
+    },
+    "legend": {
+        "orientation": "h",
+        "x": 0.5,
+        "xanchor": "center",
+        "y": -0.2,
+        "font": {
+            "family": "Arial, sans-serif",
+            "size": 12,
+            "color": "#000000"
+        }
+    },
+    "margin": {
+        "l": 60,
+        "r": 30,
+        "b": 60,
+        "t": 60
+    },
+    "plot_bgcolor": "#ffffff",
+    "paper_bgcolor": "#ffffff"
+}
