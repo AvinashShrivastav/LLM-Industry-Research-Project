@@ -218,7 +218,6 @@ def main():
                     start_time = time.time()
                     plot_graph_from_json(updated_json_gpt, "updated_chart_gpt.png")
                     plotting_time_gpt = time.time() - start_time
-
                     start_time = time.time()
                     plot_graph_from_json(updated_json_gemini, "updated_chart_gemini.png")
                     plotting_time_gemini = time.time() - start_time
